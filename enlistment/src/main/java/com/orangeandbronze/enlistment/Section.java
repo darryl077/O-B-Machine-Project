@@ -1,12 +1,16 @@
 package com.orangeandbronze.enlistment;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 public class Section {
 
 	private final String sectionId;
 	private final Schedule schedule;
 	private final Room room;
+	private final Subject subject;
 	
-	public Section(String sectionId, Schedule schedule, Room room){
+	public Section(String sectionId, Schedule schedule, Room room,Subject subject){
 
 		if(!sectionId.matches("[A-Za-z0-9]+")){
 			throw new IllegalArgumentException("Section ID must be alphanumeric. Was: " + sectionId);
@@ -19,10 +23,15 @@ public class Section {
 		if(schedule == null){
 			throw new NullPointerException("Schedule cannot be null. Was: " + schedule);
 		}
+		
+		if(subject == null){
+			throw new NullPointerException("Subject cannot be null. Was: " + subject);
+		}
 				
 		this.sectionId = sectionId;
 		this.schedule = schedule;
 		this.room = room;
+		this.subject = subject;
 	}
 
 	public Schedule getSchedule() {
@@ -70,5 +79,6 @@ public class Section {
 			
 		}
 	}
+
 	
 }

@@ -13,8 +13,9 @@ public class StudentTest {
 		Student student = new Student(1);
 		Schedule sched1 = new Schedule(Days.MTH, Period.P0830);
 		Schedule sched2 = new Schedule(Days.TF, Period.P1000);
-		Section sec1 = new Section("ABC", sched1,new Room("RM1"));
-		Section sec2 = new Section("XYZ", sched2,new Room("RM2"));		
+		Subject subject = new Subject("ABC123", Courses.English);
+		Section sec1 = new Section("ABC", sched1,new Room("RM1"),subject);
+		Section sec2 = new Section("XYZ", sched2,new Room("RM2"),subject);		
 		
 		student.enlist(sec1);
 		student.enlist(sec2);
@@ -30,8 +31,9 @@ public class StudentTest {
 		Student student = new Student(1);
 		Schedule sched1 = new Schedule(Days.MTH, Period.P0830);
 		Schedule sched2 = new Schedule(Days.MTH, Period.P0830);
-		Section sec1 = new Section("ABC", sched1, new Room("RM1"));
-		Section sec2 = new Section("XYZ", sched2,new Room("RM2"));		
+		Subject subject = new Subject("ABC123", Courses.English);
+		Section sec1 = new Section("ABC", sched1, new Room("RM1"),subject);
+		Section sec2 = new Section("XYZ", sched2,new Room("RM2"),subject);		
 		
 		student.enlist(sec1);
 		student.enlist(sec2);

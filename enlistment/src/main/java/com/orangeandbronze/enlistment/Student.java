@@ -48,13 +48,15 @@ public class Student {
 		}
 
 		for(Section currSection: sections){
-			currSection.checkForConflictWith(newSection);			
+			currSection.checkForConflictWith(newSection);
+			System.out.println(newSection.getSchedule());
 			
 		}
 
 		sections.add(newSection);
 		
 	}
+	
 	public Collection<Section> getSections(){
 		
 		return new ArrayList<>(sections);
